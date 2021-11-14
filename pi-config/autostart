@@ -1,0 +1,8 @@
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
+point-rpi
+@unclutter -idle 0
+@xset s off
+@xset -dpms
+@chromium-browser --start-fullscreen --start-minimized --kiosk --noerrdialogs --disable-infobars $WEBSITE_TO_DISPLAY
