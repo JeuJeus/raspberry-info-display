@@ -3,7 +3,7 @@ name: cd
 on: workflow_dispatch
 
 jobs:
-  docker:
+  cd:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
