@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import * as styles from './clock.modules.css';
+import style from './Clock.module.css';
 
 const Clock = () => {
 
@@ -13,7 +13,8 @@ const Clock = () => {
     })
 
     return (
-        <div className={styles.time}>
+
+        <div className={style.time}>
             {time}
         </div>
     );

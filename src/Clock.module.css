@@ -1,8 +1,12 @@
-/*TODO FIX ME LOADING THIS AS MODULE IS NOT WORKING ATM*/
 .time {
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+
+.clock {
+    color:red
 }
