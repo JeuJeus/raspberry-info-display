@@ -5,17 +5,18 @@ const Clock = () => {
 
     const [time, setTime] = useState();
 
+    const buildDateString = date => date.toLocaleTimeString('de-DE', {hour12: false});
+
     useEffect(() => {
         setInterval(() => {
-            let date = new Date();
-            setTime(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+            setTime(buildDateString(new Date()));
         }, 1000);
     })
 
     return (
 
-        <div className={style.time}>
-            {time}
+        <div className={style.clock}>
+            <div className={style.time}>{time}</div>
         </div>
     );
 };
