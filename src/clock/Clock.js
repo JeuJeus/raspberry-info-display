@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import style from './Clock.module.css';
-import {TIME_LOCALE} from "./config";
+import {TIME_LOCALE} from "../helper/config";
 
 const Clock = () => {
 

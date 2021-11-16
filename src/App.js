@@ -1,6 +1,6 @@
 import style from './App.module.css';
-import Clock from "./Clock";
-import Weather from "./Weather";
+import Clock from "./clock/Clock";
+import Weather from "./weather/Weather";
 
 function App() {
     return (
