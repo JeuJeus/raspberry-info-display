@@ -7,8 +7,7 @@ const Weather = () => {
     const [weather, saveWeather] = useState(undefined);
 
     const fetchWeatherDataFromOpenDWDData = () => {
-        const dateYyMmDd = new Date().toISOString().slice(0, 10);
-        fetch(`https://api.brightsky.dev/weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}&date=${dateYyMmDd}`)
+        fetch(`https://api.brightsky.dev/current_weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -17,8 +16,7 @@ const Weather = () => {
                 }
             })
             .then(json => {
-                saveWeather(json);
-                console.log(json);
+                saveWeather(json.weather);
             })
     }
 
@@ -31,7 +29,15 @@ const Weather = () => {
     })
 
     return (
-        <div className={style.weather}>wetter</div>
+        <div className={style.weather}>
+            {weather && <div className={style.weatherDetails}>
+                <div>Temperature: {weather.temperature} C°</div>
+                <div>Pressure: {weather.pressure_msl} hPa</div>
+                <div>Humidity: {weather.relative_humidity} %</div>
+                <div>Condition: {weather.condition}</div>
+                <div>Icon: {weather.icon}</div>
+            </div>}
+        </div>
     );
 };
 
