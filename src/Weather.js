@@ -35,10 +35,12 @@ const Weather = () => {
     return (
         <div className={style.weather}>
             {weather && <div className={style.weatherDetails}>
+                {/*TODO refactor */}
                 <div><FontAwesomeIcon icon={faTemperatureHigh}/> {weather.temperature} C°</div>
                 <div><FontAwesomeIcon icon={faWind}/> {weather.pressure_msl} hPa</div>
                 <div><FontAwesomeIcon icon={faTint}/> {weather.relative_humidity} %</div>
                 <div>Condition: {weather.condition}</div>
+                {/*TODO create sub component for this*/}
                 <div>Icon: <FontAwesomeIcon icon={weatherIcons[weather.icon]}/>{weatherIcons[weather.icon]}</div>
             </div>}
         </div>
