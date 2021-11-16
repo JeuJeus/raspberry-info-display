@@ -1,12 +1,12 @@
 import style from './App.module.css';
 import Clock from "./clock/Clock";
-import Weather from "./weather/Weather";
+import CurrentWeather from "./weather/CurrentWeather";
 
 function App() {
     return (
         <div className={style.app}>
             <Clock/>
-            <Weather/>
+            <CurrentWeather/>
         </div>
     );
 }

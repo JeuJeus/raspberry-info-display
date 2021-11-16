@@ -24,7 +24,6 @@
 
 .momentaryWeatherIcon {
     font-size: 3em;
-    margin: auto;
-    margin-left: 1em;
+    margin: auto auto auto 1em;
 }
 

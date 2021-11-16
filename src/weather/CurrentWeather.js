@@ -1,41 +1,28 @@
-import style from './Weather.module.css'
-import {LOCATION_LATITUDE, LOCATION_LONGITUDE} from "../helper/config";
+import style from './CurrentWeather.module.css'
 import {useEffect, useState} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTemperatureHigh, faTint, faWind} from "@fortawesome/free-solid-svg-icons";
 import WeatherIcon from "./WeatherIcon";
+import {fetchCurrentWeather} from "./weatherDataFetcher";
 
 
-const Weather = () => {
+const CurrentWeather = () => {
 
     const [weather, saveWeather] = useState(undefined);
 
-    const fetchWeatherDataFromOpenDWDData = () => {
-        fetch(`https://api.brightsky.dev/current_weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}`)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Error fetching weather data from Bright Sky');
-                }
-            })
-            .then(json => {
-                saveWeather(json.weather);
-            })
-    }
+
+    const getWeather = async () => fetchCurrentWeather().then(data => saveWeather(data));
 
     useEffect(() => {
-        if (weather === undefined) fetchWeatherDataFromOpenDWDData();
-
+        if (weather === undefined) getWeather();
         setInterval(() => {
-            fetchWeatherDataFromOpenDWDData();
+            getWeather();
         }, 1000 * 60 * 15);
     })
 
     return (
         <div className={style.weather}>
             {weather && <div className={style.weatherDetails}>
-                {/*TODO refactor */}
                 <div className={style.weatherData}>
                     <div><FontAwesomeIcon icon={faTemperatureHigh}/> {weather.temperature} C°</div>
                     <div><FontAwesomeIcon icon={faWind}/> {weather.pressure_msl} hPa</div>
@@ -49,4 +36,4 @@ const Weather = () => {
     );
 };
 
-export default Weather;
+export default CurrentWeather;
