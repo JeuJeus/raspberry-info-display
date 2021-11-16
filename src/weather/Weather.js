@@ -36,10 +36,14 @@ const Weather = () => {
         <div className={style.weather}>
             {weather && <div className={style.weatherDetails}>
                 {/*TODO refactor */}
-                <div><FontAwesomeIcon icon={faTemperatureHigh}/> {weather.temperature} C°</div>
-                <div><FontAwesomeIcon icon={faWind}/> {weather.pressure_msl} hPa</div>
-                <div><FontAwesomeIcon icon={faTint}/> {weather.relative_humidity} %</div>
-                <div>Icon: {weather.icon} </div><WeatherIcon icon={weather.icon}/>
+                <div className={style.weatherData}>
+                    <div><FontAwesomeIcon icon={faTemperatureHigh}/> {weather.temperature} C°</div>
+                    <div><FontAwesomeIcon icon={faWind}/> {weather.pressure_msl} hPa</div>
+                    <div><FontAwesomeIcon icon={faTint}/> {weather.relative_humidity} %</div>
+                </div>
+                <div className={style.momentaryWeatherIcon}>
+                    <div><WeatherIcon icon={weather.icon}/></div>
+                </div>
             </div>}
         </div>
     );
