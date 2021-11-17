@@ -7,7 +7,7 @@ import {
     faTint,
     faWind
 } from "@fortawesome/free-solid-svg-icons";
-import WeatherIcon from "./WeatherIcon";
+import {WeatherIcon} from "./WeatherIcon";
 import {weatherIcons} from "./weatherIconEnum";
 
 export const WeatherDataDisplay = (props) => {
