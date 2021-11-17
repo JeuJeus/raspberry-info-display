@@ -4,10 +4,9 @@ import {fetchCurrentWeather} from "./weatherDataFetcher";
 import {WeatherDataDisplay} from "./WeatherDataDisplay";
 
 
-const CurrentWeather = () => {
+export const CurrentWeather = () => {
 
     const [weather, saveWeather] = useState(undefined);
-
 
     const getWeather = async () => fetchCurrentWeather().then(data => saveWeather(data));
 
@@ -26,5 +25,3 @@ const CurrentWeather = () => {
         </div>
     );
 };
-
-export default CurrentWeather;

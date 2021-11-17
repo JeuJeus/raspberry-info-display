@@ -16,7 +16,7 @@ import {
     faWind
 } from "@fortawesome/free-solid-svg-icons";
 
-const WeatherIcon = (props) => {
+export const WeatherIcon = (props) => {
 
     const getConditionIcon = () => {
         switch (props.icon) {
@@ -53,5 +53,3 @@ const WeatherIcon = (props) => {
         getConditionIcon()
     );
 };
-
-export default WeatherIcon;

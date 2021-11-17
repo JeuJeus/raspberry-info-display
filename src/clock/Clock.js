@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import style from './Clock.module.css';
 import {TIME_LOCALE} from "../helper/config";
 
-const Clock = () => {
+export const Clock = () => {
 
     const [time, setTime] = useState();
 
@@ -20,5 +20,3 @@ const Clock = () => {
         </div>
     );
 };
-
-export default Clock;
