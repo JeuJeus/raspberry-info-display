@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHandHoldingWater, faTemperatureHigh, faTint, faWind} from "@fortawesome/free-solid-svg-icons";
 import WeatherIcon from "./WeatherIcon";
 import {fetchCurrentWeather} from "./weatherDataFetcher";
+import {weatherIcons} from "./weatherIconEnum";
 
 
 const CurrentWeather = () => {
@@ -20,6 +21,14 @@ const CurrentWeather = () => {
         }, 1000 * 60 * 15);
     })
 
+    const isRaining = () => {
+        return weather.condition === weatherIcons.RAIN
+            || weather.condition === weatherIcons.SLEET
+            || weather.condition === weatherIcons.SNOW
+            || weather.condition === weatherIcons.HAIL
+            || weather.condition === weatherIcons.THUNDERSTORM;
+    };
+
     return (
         <div className={style.weather}>
             {weather && <div className={style.weatherDetails}>
@@ -27,7 +36,7 @@ const CurrentWeather = () => {
                     <div><FontAwesomeIcon icon={faTemperatureHigh}/> {weather.temperature} C°</div>
                     <div><FontAwesomeIcon icon={faWind}/> {weather.pressure_msl} hPa</div>
                     <div><FontAwesomeIcon icon={faTint}/> {weather.relative_humidity} %</div>
-                    <div><FontAwesomeIcon icon={faHandHoldingWater}/> {weather.precipitation_60} %</div>
+                    {isRaining() && <div><FontAwesomeIcon icon={faHandHoldingWater}/> {weather.precipitation_60} %</div>}
                 </div>
                 <div className={style.momentaryWeatherIcon}>
                     <div><WeatherIcon icon={weather.icon}/></div>
