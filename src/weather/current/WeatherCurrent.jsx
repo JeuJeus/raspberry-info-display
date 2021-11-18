@@ -1,7 +1,7 @@
 import style from './WeatherCurrent.module.css'
 import {useEffect, useState} from "react";
-import {fetchCurrentWeather} from "./weatherDataFetcher";
-import {WeatherDataDisplay} from "./WeatherDataDisplay";
+import {fetchCurrentWeather} from "../weatherDataFetcher";
+import {WeatherDataDisplay} from "../dataDisplay/WeatherDataDisplay";
 
 
 export const WeatherCurrent = () => {

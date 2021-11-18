@@ -17,6 +17,7 @@ export const Clock = () => {
     return (
         <div className={style.clock}>
             <div className={style.time}>{time}</div>
+            {/*TODO add date*/}
         </div>
     );
 };

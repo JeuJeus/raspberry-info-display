@@ -1,4 +1,5 @@
 import {LOCATION_LATITUDE, LOCATION_LONGITUDE} from "../helper/config";
+import {addDays} from "../helper/helper";
 
 const fetchWeatherDataFromOpenDWDData = (queryString) => {
     return fetch(`https://api.brightsky.dev/${queryString}`)
@@ -14,10 +15,7 @@ const fetchWeatherDataFromOpenDWDData = (queryString) => {
         });
 }
 
-const addDays = (days) => {
-    let result = new Date();
-    return new Date(result.setDate(result.getDate() + days));
-}
+const getDateInNDaysAsYyMmDd = days => addDays(days).toISOString().slice(0, 10);
 
 export const fetchCurrentWeather = () => {
     const queryString = `current_weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}`;
@@ -25,8 +23,8 @@ export const fetchCurrentWeather = () => {
 }
 
 export const fetchWeatherForecast = async () => {
-    const dateYyMmDdToday = new Date().toISOString().slice(0, 10);
-    const dateYyMmDdInThreeDays = addDays(3).toISOString().slice(0, 10);
-    const queryString = `weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}&date=${dateYyMmDdToday}&last_date=${dateYyMmDdInThreeDays}`;
+    const dateTomorrow = getDateInNDaysAsYyMmDd(1);
+    const dateInFourDays = getDateInNDaysAsYyMmDd(4);
+    const queryString = `weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}&date=${dateTomorrow}&last_date=${dateInFourDays}`;
     return fetchWeatherDataFromOpenDWDData(queryString);
 };

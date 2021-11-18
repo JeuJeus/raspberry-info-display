@@ -1,4 +1,4 @@
-import style from "./WeatherCurrent.module.css";
+import style from "../current/WeatherCurrent.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faHandHoldingWater, faLocationArrow,
@@ -7,8 +7,8 @@ import {
     faTint,
     faWind
 } from "@fortawesome/free-solid-svg-icons";
-import {WeatherIcon} from "./WeatherIcon";
-import {weatherIcons} from "./weatherIconEnum";
+import {WeatherIcon} from "../icon/WeatherIcon";
+import {weatherIcons} from "../icon/weatherIconEnum";
 
 export const WeatherDataDisplay = (props) => {
 
