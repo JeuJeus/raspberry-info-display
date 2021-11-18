@@ -1,14 +1,15 @@
 import style from './WeatherForecast.module.css';
 import {useEffect, useState} from "react";
-import {fetchCurrentWeather, fetchWeatherForecast} from "./weatherDataFetcher";
-import {WeatherDataDisplay} from "./WeatherDataDisplay";
+import {fetchCurrentWeather, fetchWeatherForecast} from "../weatherDataFetcher";
+import {WeatherDataDisplay} from "../dataDisplay/WeatherDataDisplay";
+import {parseForecast} from "./forecastParser";
 
 
 export const WeatherForecast = () => {
 
     const [forecast, saveForecast] = useState(undefined);
 
-    const getForecast = async () => fetchWeatherForecast().then(data => saveForecast(data));
+    const getForecast = async () => fetchWeatherForecast().then(data => parseForecast(data)).then(data => saveForecast(data));
 
     useEffect(() => {
         if (forecast === undefined) getForecast();
