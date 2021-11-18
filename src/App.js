@@ -1,10 +1,12 @@
 import style from './App.module.css';
 import {Clock} from "./clock/Clock";
-import {CurrentWeather} from "./weather/CurrentWeather";
+import {WeatherCurrent} from "./weather/WeatherCurrent";
+import {WeatherForecast} from "./weather/WeatherForecast";
 
 export const App = () => (
     <div className={style.app}>
         <Clock/>
-        <CurrentWeather/>
+        {/*<WeatherCurrent/>*/}
+        <WeatherForecast/>
     </div>
 );

@@ -16,7 +16,7 @@ const fetchWeatherDataFromOpenDWDData = (queryString) => {
 
 const addDays = (days) => {
     let result = new Date();
-    return result.setDate(result.getDate() + days);
+    return new Date(result.setDate(result.getDate() + days));
 }
 
 export const fetchCurrentWeather = () => {
@@ -24,7 +24,7 @@ export const fetchCurrentWeather = () => {
     return fetchWeatherDataFromOpenDWDData(queryString);
 }
 
-export const fetchWeatherForecast = () => {
+export const fetchWeatherForecast = async () => {
     const dateYyMmDdToday = new Date().toISOString().slice(0, 10);
     const dateYyMmDdInThreeDays = addDays(3).toISOString().slice(0, 10);
     const queryString = `weather?lat=${LOCATION_LATITUDE}&lon=${LOCATION_LONGITUDE}&date=${dateYyMmDdToday}&last_date=${dateYyMmDdInThreeDays}`;

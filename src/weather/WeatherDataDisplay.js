@@ -1,4 +1,4 @@
-import style from "./CurrentWeather.module.css";
+import style from "./WeatherCurrent.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faHandHoldingWater, faLocationArrow,
