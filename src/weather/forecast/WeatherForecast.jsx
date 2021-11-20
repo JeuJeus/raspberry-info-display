@@ -4,7 +4,7 @@ import {fetchWeatherForecast} from "../weatherDataFetcher";
 import {parseForecast} from "./forecastParser";
 
 
-const iterateTroughDays = () => {
+const iterateTroughDays = (forecast) => {
 
 };
 
@@ -12,6 +12,7 @@ const displayEachDay = (forecast) => {
     return Object.entries(forecast).filter(X => X).map(([day, forecastData]) =>
         <div>
             <div className={style.day} key={day}>{day}</div>
+            {iterateTroughDays(forecast)}
         </div>
     )
 }
@@ -24,7 +25,6 @@ export const WeatherForecast = () => {
 
     useEffect(() => {
         if (forecast === undefined) getForecast();
-        else console.log(forecast)
         setInterval(() => {
             getForecast();
         }, 1000 * 60 * 60);
