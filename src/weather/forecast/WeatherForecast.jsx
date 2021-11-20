@@ -36,9 +36,8 @@ export const WeatherForecast = () => {
     const displayEachDay = () => {
         return Object.entries(forecast).filter(X => X).map(([day, forecastData]) => {
             let dateAndTimeFormatted = new Date(forecastData[currentTimeShown].timestamp).toLocaleString(TIME_LOCALE);
-            return <div>
-                    <div className={style.day}
-                         key={`${day}timestamp`}>{dateAndTimeFormatted}</div>
+            return <div className={style.forecastPerDay}>
+                    <div className={style.timestamp} key={`${day}timestamp`}>{dateAndTimeFormatted}</div>
                     <WeatherDataDisplay key={`${day}data`} weather={forecastData[currentTimeShown]}/>
                 </div>;
             }

@@ -1,5 +1,20 @@
 .weatherForecast {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0.5em;
+}
 
+.forecastPerDay {
+    margin: 1em;
+}
+
+.timestamp {
+    font-size: 2em;
 }
 
 .dayForecast {
