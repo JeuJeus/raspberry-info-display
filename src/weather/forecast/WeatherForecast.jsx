@@ -9,20 +9,6 @@ export const WeatherForecast = () => {
 
     const HOURS_PER_DAY = 24;
 
-    const iterateTroughDays = () => {
-        saveCurrentTimeShown((currentTimeShown + 1) % HOURS_PER_DAY)
-    };
-
-    const displayEachDay = (forecast) => {
-        return Object.entries(forecast).filter(X => X).map(([day, forecastData]) =>
-            <div>
-                <div className={style.day}
-                     key={`${day}timestamp`}>{day} {forecastData[currentTimeShown].timestamp}</div>
-                <WeatherDataDisplay key={`${day}data`} weather={forecastData[currentTimeShown]}/>
-            </div>
-        )
-    }
-
     const [forecast, saveForecast] = useState(undefined);
     const [currentTimeShown, saveCurrentTimeShown] = useState(0);
 
@@ -41,6 +27,20 @@ export const WeatherForecast = () => {
             clearInterval(iterateTroughDaysInterval);
         }
     })
+
+    const iterateTroughDays = () => {
+        saveCurrentTimeShown((currentTimeShown + 1) % HOURS_PER_DAY)
+    };
+
+    const displayEachDay = (forecast) => {
+        return Object.entries(forecast).filter(X => X).map(([day, forecastData]) =>
+            <div>
+                <div className={style.day}
+                     key={`${day}timestamp`}>{day} {forecastData[currentTimeShown].timestamp}</div>
+                <WeatherDataDisplay key={`${day}data`} weather={forecastData[currentTimeShown]}/>
+            </div>
+        )
+    }
 
     return (
         <div>
