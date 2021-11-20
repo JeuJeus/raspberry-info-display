@@ -12,9 +12,10 @@ export const WeatherCurrent = () => {
 
     useEffect(() => {
         if (weather === undefined) getWeather();
-        setInterval(() => {
+        let getWeatherInterval = setInterval(() => {
             getWeather();
         }, 1000 * 60 * 15);
+        return () => clearInterval(getWeatherInterval);
     })
 
     return (
