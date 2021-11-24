@@ -38,7 +38,7 @@ export const WeatherDataDisplay = (props) => {
                 {isHumidityAvailable() &&
                 <div><FontAwesomeIcon icon={faTint}/> {props.weather.relative_humidity} %</div>}
                 {isRaining() &&
-                <div><FontAwesomeIcon icon={faHandHoldingWater}/> {precipitation} %</div>}
+                <div><FontAwesomeIcon icon={faHandHoldingWater}/> {precipitation} mm</div>}
                 <div><FontAwesomeIcon icon={faWind}/> {windSpeed} km/h <FontAwesomeIcon
                     icon={faLocationArrow} style={{transform: `rotate(${windDirection}deg)`}}/></div>
             </div>
