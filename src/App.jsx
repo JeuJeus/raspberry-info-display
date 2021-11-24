@@ -9,6 +9,10 @@ export const App = () => {
 
     const pathComponentMapping = [
         {
+            path: '/',
+            element: null
+        },
+        {
             path: '/weather/current',
             element: <WeatherCurrent/>
         },
