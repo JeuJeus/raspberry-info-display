@@ -33,7 +33,7 @@ export const CoronaMap = () => {
 
     return (
         <div className={styles.mapParent}>
-            <img className={styles.map} src={coronaMap[currentMapIndex].link}/>
+            <img className={styles.map} src={coronaMap[currentMapIndex].link} alt="corona-map"/>
             <p>{coronaMap[currentMapIndex].description}</p>
         </div>
     );
