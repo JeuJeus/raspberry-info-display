@@ -1,16 +1,6 @@
 import style from './App.module.css';
 import {Clock} from "./clock/Clock";
-import {
-    BrowserRouter,
-    matchPath,
-    Outlet,
-    Route,
-    Routes,
-    Switch,
-    useLocation,
-    useNavigate,
-    useRoutes
-} from "react-router-dom";
+import {useLocation, useNavigate, useRoutes} from "react-router-dom";
 import {useEffect} from "react";
 import {WeatherCurrent} from "./weather/current/WeatherCurrent";
 import {WeatherForecast} from "./weather/forecast/WeatherForecast";
