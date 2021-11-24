@@ -1,0 +1,19 @@
+.mapParent {
+    width: auto;
+    vertical-align: bottom;
+    height: 50%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.map {
+    object-fit: contain;
+    width: 50%;
+    max-width: 100%;
+    max-height: 100%;
+}

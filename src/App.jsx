@@ -4,6 +4,7 @@ import {useLocation, useNavigate, useRoutes} from "react-router-dom";
 import {useEffect} from "react";
 import {WeatherCurrent} from "./weather/current/WeatherCurrent";
 import {WeatherForecast} from "./weather/forecast/WeatherForecast";
+import {CoronaMap} from "./weather/corona/map/CoronaMap";
 
 export const App = () => {
 
@@ -19,6 +20,10 @@ export const App = () => {
         {
             path: '/weather/forecast',
             element: <WeatherForecast/>
+        },
+        {
+            path: '/corona/map',
+            element: <CoronaMap/>
         }
     ];
     const routes = useRoutes(pathComponentMapping);

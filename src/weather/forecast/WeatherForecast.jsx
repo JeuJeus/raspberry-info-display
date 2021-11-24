@@ -22,7 +22,7 @@ export const WeatherForecast = () => {
         }, 1000 * 60 * 60);
         const iterateTroughDaysInterval = setInterval(() => {
             iterateTroughDays();
-        }, 1000);
+        }, 500);
         return () => {
             clearInterval(getForecastInterval);
             clearInterval(iterateTroughDaysInterval);
@@ -34,7 +34,7 @@ export const WeatherForecast = () => {
     };
 
     const displayEachDay = () => {
-        return Object.entries(forecast).filter(X => X).map(([day, forecastData]) => {
+        return Object.entries(forecast).map(([day, forecastData]) => {
             let dateAndTimeFormatted = new Date(forecastData[currentTimeShown].timestamp).toLocaleString(TIME_LOCALE);
             return <div className={style.forecastPerDay}>
                     <div className={style.timestamp} key={`${day}timestamp`}>{dateAndTimeFormatted}</div>
