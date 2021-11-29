@@ -27,7 +27,7 @@ export const WeatherForecast = () => {
             clearInterval(getForecastInterval);
             clearInterval(iterateTroughDaysInterval);
         }
-    })
+    });
 
     const iterateTroughDays = () => {
         saveCurrentTimeShown((currentTimeShown + 1) % HOURS_PER_DAY)

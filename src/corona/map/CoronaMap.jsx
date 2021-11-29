@@ -29,7 +29,7 @@ export const CoronaMap = () => {
         return () => {
             clearInterval(getChangeMapInterval);
         }
-    })
+    });
 
     return (
         <div className={styles.mapParent}>

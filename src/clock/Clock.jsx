@@ -11,11 +11,14 @@ export const Clock = () => {
     const buildDateString = dateDate => dateDate.toLocaleDateString(TIME_LOCALE);
 
     useEffect(() => {
-        setInterval(() => {
+        let updateInterval = setInterval(() => {
             setTime(buildTimeString(new Date()));
             setDate(buildDateString(new Date()));
         }, 1000);
-    })
+        return () => {
+            clearInterval(updateInterval);
+        }
+    });
 
     return (
         <div className={style.clock}>

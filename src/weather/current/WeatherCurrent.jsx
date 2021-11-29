@@ -16,7 +16,7 @@ export const WeatherCurrent = () => {
             getWeather();
         }, 1000 * 60 * 15);
         return () => clearInterval(getWeatherInterval);
-    })
+    });
 
     return (
         <div className={style.weather}>

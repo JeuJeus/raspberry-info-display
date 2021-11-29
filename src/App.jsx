@@ -4,7 +4,7 @@ import {useLocation, useNavigate, useRoutes} from "react-router-dom";
 import {useEffect} from "react";
 import {WeatherCurrent} from "./weather/current/WeatherCurrent";
 import {WeatherForecast} from "./weather/forecast/WeatherForecast";
-import {CoronaMap} from "./weather/corona/map/CoronaMap";
+import {CoronaMap} from "./corona/map/CoronaMap";
 
 export const App = () => {
 
@@ -42,7 +42,7 @@ export const App = () => {
             switchComponent();
         }, 1000 * 20);
         return () => clearInterval(switchComponentInterval);
-    })
+    });
 
     return (
         <div className={style.app}>
