@@ -22,7 +22,7 @@ export const WeatherForecast = () => {
         }, 1000 * 60 * 60);
         const iterateTroughDaysInterval = setInterval(() => {
             iterateTroughDays();
-        }, 500);
+        }, 1000);
         return () => {
             clearInterval(getForecastInterval);
             clearInterval(iterateTroughDaysInterval);

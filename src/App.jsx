@@ -40,7 +40,7 @@ export const App = () => {
     useEffect(() => {
         let switchComponentInterval = setInterval(() => {
             switchComponent();
-        }, 1000 * 20);
+        }, 1000 * 30);
         return () => clearInterval(switchComponentInterval);
     });
 
